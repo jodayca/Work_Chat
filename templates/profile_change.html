@@ -1,0 +1,169 @@
+{% extends "index.html" %}
+
+{% block title %} Profile {% endblock  %}
+
+{% block content %}
+
+<br>
+
+<div class="row flex-lg-nowrap">
+    <div class="col">
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="e-profile">
+                            {% if user %}
+                            <div class="row">
+                                {% if user.AVATAR =='img.png' %}
+                                <div class="col-12 col-sm-auto mb-3">
+                                    <div class="mx-auto" style="width: 140px;">
+                                        <div class="d-flex justify-content-center align-items-center rounded"
+                                            style="height: 140px; background-color: rgb(233, 236, 239);">
+                                            <span
+                                                style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="col-12 col-sm-auto mb-3">
+                                    <div class="mx-auto" style="width: 140px;">
+                                        <div class="d-flex justify-content-center align-items-center rounded"
+                                            style="height: 140px; background-color: rgb(233, 236, 239);">
+                                            <img class="img-profile"
+                                                src="{{ url_for('static', filename = user.AVATAR) }}" alt="avatar">
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{user.NAMES}}
+                                            {{user.LAST_NAMES}}</h4>
+                                        <p class="mb-0">{{user.NICK_NAME}}</p>
+                                        <div class="mt-2">
+                                            <form action="{{url_for('ProfileImg', user=session['username'])}}" method="POST"
+                                                enctype="multipart/form-data">
+                                                <div class="form-group choise-image-profile">
+                                                    <input type="file" name="file"
+                                                        class="form-control-file input-choise-img-profile"
+                                                        accept="image/png, image/jpeg">
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="text-center text-sm-right">
+                                        <span class="badge badge-secondary">{{user.TYPE}}</span>
+                                        <div class="text-muted"><small>Agregado: {{user.UNIO}}</small></div>
+                                    </div>
+                                </div>
+                                <div>
+                                {{ render_messages(messages) }}
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a href="{{url_for('Profile', user=session['username'], choise='change')}}" class="active nav-link">Cambiar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{url_for('Profile', user=session['username'], choise='view')}}" class="nav-link">Perfil</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content pt-3">
+                                <div class="tab-pane active">
+                                    <form action="{{url_for('Profile', user=session['username'], choise='change')}}" class="form" method="POST">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Nombres</label>
+                                                            <input class="form-control" type="text" name="names"
+                                                                placeholder="{{user.NAMES}}" value="{{user.NAMES}}"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Apellidos</label>
+                                                            <input class="form-control" type="text" name="last_names"
+                                                                placeholder="{{user.LAST_NAMES}}"
+                                                                value="{{user.LAST_NAMES}}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Usuario</label>
+                                                            <input class="form-control" type="text" name="username"
+                                                                placeholder="{{user.NICK_NAME}}"
+                                                                value="{{user.NICK_NAME}}" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Correo</label>
+                                                            <input class="form-control" type="text" name="email"
+                                                                placeholder="{{user.EMAIL_USER}}"
+                                                                value="{{user.EMAIL_USER}}" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 mb-3">
+                                                <div class="mb-2"><b>Cambio de Contraseña</b></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Contraseña Actual</label>
+                                                            <input name="pass" class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Contraseña Nueva</label>
+                                                            <input name="pass_new" class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Confirmar
+                                                                <span class="d-none d-xl-inline">Contraseña</span>
+                                                            </label>
+                                                            <input name="pass_conf" class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-end">
+                                                <button class="btn btn-primary" type="submit">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

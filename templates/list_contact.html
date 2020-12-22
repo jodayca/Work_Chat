@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block title %} Contactos {% endblock  %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 mx-auto">
+        <h1>Lista de Contactos</h1>
+        <div>
+            <a href="{{url_for('ContactsNew')}}" type="button" class="btn-add-contact">
+                <img src="{{url_for('static', filename='images/newuser.png')}}" class="icon-groups-contact" alt="groups">
+            </a>
+            <p class="span-icon-contact">Nuevo Contacto</p>
+        </div>
+    </div><br>
+    <div class="col-md-5 col-sm-12 mx-auto">
+        <div class="contact-list">
+            <!-- Single line list with Icon-->
+            <ul class="list-group pmd-list pmd-card-list">
+                {% for contact in contacts %}
+                <li class="list-group-item d-flex">
+                    <i class="material-icons pmd-sm pmd-list-icon">
+                        <img src="{{url_for('static', filename='images/newuser.png')}}" class="icon-groups-contact" alt="">
+                    </i>
+                    <span class="media-body ml-2"> {{ contact.1  }} </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

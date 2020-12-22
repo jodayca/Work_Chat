@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block title %} Home {% endblock  %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 mx-auto">
+        <div class="function">
+            <h2 class="text-center mt-title">Welcome</h2>
+            <hr>
+            <div class="text-info">
+                Work Chat es un portal para conectarse y comunicarse por medio
+                de chats con las personas de tu organización.
+            </div>
+            <h3 class="text-center mt-title">Funciones Work Chat</h3>
+            <div class="card-deck">
+                <div class="col-md-4 mb-4 text-white">
+                    <div class="card card-colors-chat">
+                        <img src="{{ url_for('static', filename = 'images/chat.png') }}" class="card-img-top chat-img" alt="chat">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Workplace Chat</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 text-white">
+                    <div class="card card-colors-groups">
+                        <img src="{{ url_for('static', filename = 'images/groups.png') }}" class="card-img-top chat-groups" alt="groups">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Groups</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 text-white">
+                    <div class="card card-colors-news">
+                        <img src="{{ url_for('static', filename = 'images/news.png') }}" class="card-img-top chat-news" alt="news">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">News Sections</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {% endblock  content %}

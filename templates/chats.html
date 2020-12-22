@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% block title %} Chats {% endblock  %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 col-sm-12 mx-auto">
+        <div class="list-view-chat">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 mx-auto">
+        <div class="view-chat">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a href="{{url_for('ConctactList')}}" type="button" class="btn-add">+</a>
+    </div>
+</div>
+{% endblock  content %}

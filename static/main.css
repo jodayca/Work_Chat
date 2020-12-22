@@ -1,0 +1,132 @@
+/* Iconos  */
+
+.icons{
+    background-color: #000000;
+    font-size: 35px !important;
+    margin: 0px;
+}
+
+.mt-title{
+    margin-top: 80px !important;
+}
+.text-info{
+    font-size: 2em;
+}
+.card-colors-chat{
+    background-color: brown;
+}
+.chat-img, .chat-groups, .chat-news{
+    padding-top: 10px !important;
+    width: 40% !important;
+    margin: auto !important;
+}
+
+.card-colors-groups{
+    background-color: cyan;
+}
+
+.card-colors-news{
+    background-color: coral;
+}
+
+
+/* Vista Lista de Chats */
+.list-view-chat{
+    background-color: crimson;
+    margin-top: 40px;
+}
+
+.view-chat{
+    background-color: coral;
+    margin-top: 40px;
+}
+
+/* Boton para nuevo chat */
+
+.btn-add{
+    margin-top: 30px;
+    background-color: crimson !important;
+    border-radius: 90%;
+    border: 1px solid crimson;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 3px 14px 7px 14px;
+    position: absolute;
+    float: left;
+    width: auto;
+    z-index: 10;
+}
+
+.btn-add-groups, .btn-add-contact{
+    margin-top: 0px;
+    top: 60px;
+    background-color: crimson !important;
+    border-radius: 90%;
+    border: 1px solid crimson;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 3px 14px 7px 14px;
+    position: absolute;
+    float: left;
+    width: auto;
+    z-index: 10;
+}
+
+/*.btn-add-contact{
+    margin-top: 0px;
+    top: 115px;
+    background-color: crimson !important;
+    border-radius: 90%;
+    border: 1px solid crimson;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 3px 14px 7px 14px;
+    position: absolute;
+    float: left;
+    width: auto;
+    z-index: 10;
+}*/
+
+/* Fab icons contactos */
+
+.icon-groups-contact{
+    width: 15px;
+}
+
+.span-icon-group, .span-icon-contact{
+    padding-left: 60px;
+    margin: 25px 0 0 0;
+}
+
+/*Check de contactos */
+.radio-check-contact{
+    margin: 0px 0px 0px 30px !important;
+
+}
+
+/*Avatar Lista para agregar Contactos */
+.avatar-icon{
+    margin-right: 15px;
+}
+
+
+/* Boton para gregar imagen de perfil */
+input[type="file"] {
+    color:#ffffff;
+}
+
+/*  Imagen de Perfil */
+.choise-image-profile{
+    background: #0275d8;
+    padding: 10px 20px 10px 10px;
+    border-radius: 10px;
+}
+
+.input-choise-img-profile{
+    overflow: hidden !important;
+}
+
+.img-profile{
+    width: 100%;
+    border-radius: 6px;
+}

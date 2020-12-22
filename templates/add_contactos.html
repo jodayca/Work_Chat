@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block title %} Agregar Contactos {% endblock  %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 mx-auto">
+        <h1 class="text-center mb-10">Agregar Contacto</h1><br>
+        <div class="contact-list table-responsive">
+            {% for contact in contacts %}
+            <form action="{{url_for('ContactsNew')}}" method="POST">
+                <table id="myContact">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <i class="material-icons pmd-sm pmd-list-icon avatar-icon">
+                                    <img src="{{url_for('static', filename='images/newuser.png')}}" class="icon-groups-contact" alt="">
+                                </i>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control-plaintext" value="{{ contact.1  }}" readonly>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control-plaintext" value="{{ contact.5  }} " readonly>
+                            </td>
+                            <td>
+                                <input class="form-check-input radio-check-contact" type="checkbox" name="check-contact"
+                                    id="exampleRadios1" value="{{ contact.0 }}">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% endfor %}
+                <br>
+                <button type="submit" class="btn btn-outline-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
